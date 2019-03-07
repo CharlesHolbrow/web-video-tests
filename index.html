@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src='./indigo-player.js'></script>
+    </head>
+    <body>
+        <h1>Video Tests</h1>
+        <h2>Indigo Player</h2>
+        <div id='playerContainer'></div>
+        <h2>HTML Video Element</h2>
+        <video src='./Color Poem - November 2, 2018 - 1080 × 1376.mp4' controls></video>
+        <ul>
+            <li><a href="https://player.vimeo.com/video/298704395">Vimeo Twitter Player</a></li>
+            <li><a href="https://vimeo.com/298704395">Vimeo Page</a></li>
+            <li>According to <a href='https://blog.bitsrc.io/5-open-source-html5-video-players-for-2018-38fa85932afb'>This site</a> these support analytics out of the box
+                <ul>
+                    <li><a href='https://www.jwplayer.com/'>JW Player</a></li>
+                    <li><a href='http://player.kaltura.com/'>Kaltura Player</a></li>
+                </ul>
+            </li>
+        </ul>
+        <h2>Twitter Player (iframe)</h2>
+        <iframe src="https://player.vimeo.com/video/298704395" frameborder="0"></iframe>
+        <h2>My Website (iframe)</h2>
+        <iframe src="http://web.media.mit.edu/~holbrow/" frameborder="0"></iframe>
+        <script>
+            const config = {
+              sources: [
+                {
+                  type: 'mp4',
+                  src: './Color Poem - November 2, 2018 - 1080 × 1376.mp4'
+                }
+              ],
+            };
+      
+            const element = document.getElementById('playerContainer');
+            const player = window.player = IndigoPlayer.init(element, config);
+      
+            // You can use the player object now to access the player and it's methods (play, pause, ...)
+        </script>
+       
+    </body>
+</html>
+
