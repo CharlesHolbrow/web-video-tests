@@ -1,0 +1,22 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: x7-world-cert
+  namespace: charles
+spec:
+  secretName: x7-world-cert
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  dnsNames:
+  - x7.world
+  acme:
+    config:
+    # for http1, you must specify EITHER `ingress-class` OR `ingress`
+    - http01:
+        # creating this certificate can modify an existing ingress resource.
+        # Specify which ingress to modify using the ingress field. 
+        # ingress: example-ingress
+        ingress-class: nginx
+      domains:
+      - x7.world
