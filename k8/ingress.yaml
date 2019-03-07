@@ -1,0 +1,22 @@
+# to update, use:
+# $ kubectl replace -f ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: web-video-test
+spec:
+  rules:
+  - host: x7.world
+    http:
+      paths:
+      - backend:
+          serviceName: web-video-test-service
+          servicePort: 80
+        # The path refers to the url of incoming http traffic
+        path: /
+  tls:
+  - hosts:
+    - x7.world
+    secretName: x7-world-cert
